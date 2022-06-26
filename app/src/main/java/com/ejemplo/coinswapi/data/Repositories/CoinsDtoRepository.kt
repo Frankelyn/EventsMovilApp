@@ -12,13 +12,13 @@ import javax.inject.Inject
 class CoinsDtoRepository @Inject constructor(
     private val api: CoinsAPI
 ) {
-    fun getListExchanges(): Flow<Resource<List<CoinDto>>> = flow {
+    fun getCoins(): Flow<Resource<List<CoinDto>>> = flow {
         try {
             emit(Resource.Loading())
 
-            val exchanges = api.getCoins()
+            val coin = api.getCoins()
 
-            emit(Resource.Success(exchanges))
+            emit(Resource.Success(coin))
         } catch (e: HttpException) {
             //error general HTTP
             emit(Resource.Error(e.message ?: "Error HTTP GENERAL"))

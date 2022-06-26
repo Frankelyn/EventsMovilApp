@@ -20,7 +20,7 @@ class CoinsViewModel @Inject constructor(
     val state: State<CoinsState> = _state
 
     init {
-        coinsDtoRepository.getListExchanges().onEach { result ->
+        coinsDtoRepository.getCoins().onEach { result ->
             when (result) {
                 is Resource.Loading -> {
                     _state.value = CoinsState(isLoading = true)
