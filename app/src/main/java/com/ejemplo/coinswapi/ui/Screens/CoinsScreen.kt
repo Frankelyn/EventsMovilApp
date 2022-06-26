@@ -20,6 +20,10 @@ import com.ejemplo.coinswapi.data.remote.Dto.CoinDto
 
 
 
+@Composable
+fun HolaMundo(){
+    Text(text = "Hola Mundo")
+}
 
 @Composable
 fun CoinsScreen(viewModel: CoinsViewModel = hiltViewModel())
@@ -28,6 +32,8 @@ fun CoinsScreen(viewModel: CoinsViewModel = hiltViewModel())
 
     Column(modifier = Modifier.fillMaxSize()) {
 
+        Text(text = "Coins")
+        
         LazyColumn(modifier = Modifier.fillMaxSize()){
             items( state.coins){ coin ->
                 CoinItem(coin = coin, {})
