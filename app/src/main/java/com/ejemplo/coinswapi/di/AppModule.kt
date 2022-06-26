@@ -1,5 +1,6 @@
 package com.ejemplo.coinswapi.di
 
+import com.ejemplo.coinswapi.data.Repositories.CoinsDtoRepository
 import com.ejemplo.coinswapi.data.remote.API.CoinsAPI
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -30,5 +31,11 @@ object AppModule {
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
             .create(CoinsAPI::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCoinRepository(coinsApi: CoinsAPI): CoinsDtoRepository {
+        return CoinsDtoRepository(coinsApi)
     }
 }
