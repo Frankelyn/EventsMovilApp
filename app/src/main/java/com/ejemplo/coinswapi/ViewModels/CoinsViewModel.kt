@@ -27,7 +27,7 @@ class CoinsViewModel @Inject constructor(
                 }
 
                 is Resource.Success -> {
-                    _state.value = CoinsState(exchanges = result.data ?: emptyList())
+                    _state.value = CoinsState(coins = result.data ?: emptyList())
                 }
                 is Resource.Error -> {
                     _state.value = CoinsState(error = result.message ?: "Error desconocido")
