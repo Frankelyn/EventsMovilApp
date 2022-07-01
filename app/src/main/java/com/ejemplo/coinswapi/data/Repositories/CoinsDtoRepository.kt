@@ -27,4 +27,9 @@ class CoinsDtoRepository @Inject constructor(
             emit(Resource.Error(e.message ?: "verificar tu conexion a internet"))
         }
     }
+
+    suspend fun setCoins(coinDto: CoinDto){
+        val call = api.setCoins(coinDto)
+        val coin = call.body()
+    }
 }
