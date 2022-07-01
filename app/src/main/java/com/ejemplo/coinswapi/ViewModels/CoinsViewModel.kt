@@ -35,4 +35,6 @@ class CoinsViewModel @Inject constructor(
             }
         }.launchIn(viewModelScope)
     }
+
+    
 }
