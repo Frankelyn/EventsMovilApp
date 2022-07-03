@@ -19,8 +19,8 @@ class CoinsViewModel @Inject constructor(
     private val coinsDtoRepository: CoinsDtoRepository
 ) : ViewModel() {
 
-    val txnombreCoin by mutableStateOf("")
-    val txprecio by mutableStateOf("")
+    var txnombreCoin by mutableStateOf("")
+    var txprecio by mutableStateOf("")
 
     private var _state = mutableStateOf(CoinsState())
     val state: State<CoinsState> = _state
