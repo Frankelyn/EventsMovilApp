@@ -12,8 +12,10 @@ import androidx.compose.material.icons.filled.PriceCheck
 import androidx.compose.material.icons.filled.Save
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -45,6 +47,7 @@ fun RegistroCoinScreen(
                 .padding(it)
                 .padding(8.dp)
         ) {
+            Text(text = "Descripcion", modifier = Modifier.padding(8.dp))
             OutlinedTextField(
                 value = viewModel.txnombreCoin,
                 onValueChange = { viewModel.txnombreCoin = it
@@ -60,7 +63,7 @@ fun RegistroCoinScreen(
             )
 
             validar(error = descripcionError)
-
+            Text(text = "Valor", modifier = Modifier.padding(8.dp))
             OutlinedTextField(
                 value = viewModel.txprecio,
                 onValueChange = { viewModel.txprecio = it
@@ -84,15 +87,16 @@ fun RegistroCoinScreen(
                     if(!descripcionError && !valorError){
                         if(viewModel.txprecio.toDouble()>0){
                             viewModel.setCoin()
-                            //navHostController.navigateUp()
+                            navHostController.navigateUp()
                         }else{
                             Toast.makeText(context, "El precio no puede ser negativo", Toast.LENGTH_LONG).show()
                         }
 
                     }
                 },
+                modifier = Modifier.align(alignment = Alignment.CenterHorizontally)
             ) {
-
+                Text(text = "Guardar", textAlign = TextAlign.Center)
             }
 
         }
