@@ -84,7 +84,7 @@ fun RegistroCoinScreen(viewModel: CoinsViewModel = hiltViewModel()){
                             //navHostController.navigateUp()
                         }else{
                             Toast.makeText(context, "El precio no puede ser negativo", Toast.LENGTH_LONG).show()
-                        }T
+                        }
 
                     }
                 },
