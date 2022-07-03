@@ -1,5 +1,6 @@
 package com.ejemplo.coinswapi.ui.Screens
 
+import android.content.Intent.getIntent
 import android.graphics.Paint
 import android.widget.Toolbar
 import androidx.compose.foundation.clickable
@@ -19,6 +20,7 @@ import androidx.compose.ui.text.font.FontSynthesis.Companion.Style
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat.startActivity
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
@@ -26,6 +28,7 @@ import com.ejemplo.coinswapi.ViewModels.CoinsViewModel
 import com.ejemplo.coinswapi.data.remote.Dto.CoinDto
 import com.ejemplo.coinswapi.ui.Navigation.ScreenRoutes
 import org.intellij.lang.annotations.JdkConstants
+
 
 
 
