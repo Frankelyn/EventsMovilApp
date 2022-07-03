@@ -17,6 +17,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import com.ejemplo.coinswapi.ViewModels.CoinsViewModel
 import org.intellij.lang.annotations.JdkConstants
 
@@ -27,7 +28,9 @@ fun Toolbar2() {
 }
 
 @Composable
-fun RegistroCoinScreen(viewModel: CoinsViewModel = hiltViewModel()){
+fun RegistroCoinScreen(
+    navHostController: NavHostController,
+    viewModel: CoinsViewModel = hiltViewModel()){
 
     var descripcionError by remember { mutableStateOf(false) }
     var valorError by remember { mutableStateOf(false) }

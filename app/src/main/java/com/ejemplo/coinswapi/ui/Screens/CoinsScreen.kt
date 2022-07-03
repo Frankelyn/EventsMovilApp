@@ -16,6 +16,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.ejemplo.coinswapi.ViewModels.CoinsViewModel
 import com.ejemplo.coinswapi.data.remote.Dto.CoinDto
@@ -28,7 +29,9 @@ fun Toolbar() {
 }
 
 @Composable
-fun CoinsScreen(viewModel: CoinsViewModel = hiltViewModel()) {
+fun CoinsScreen(
+    navHostController: NavHostController,
+    viewModel: CoinsViewModel = hiltViewModel()) {
     val state = viewModel.state.value
 
     Scaffold(
