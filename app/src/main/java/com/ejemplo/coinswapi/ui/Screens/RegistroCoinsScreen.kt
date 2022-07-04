@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.ejemplo.coinswapi.ViewModels.CoinsViewModel
+import com.ejemplo.coinswapi.ui.Navigation.ScreenRoutes
 
 
 @Composable
@@ -80,7 +81,7 @@ fun RegistroCoinScreen(
                     if(!descripcionError && !valorError){
                         if(viewModel.txprecio.toDouble()>0){
                             viewModel.setCoin()
-                            navHostController.navigateUp()
+                            navHostController.navigate(ScreenRoutes.ConsultaCoinsScreen.ruta)
                         }else{
                             Toast.makeText(context, "El precio no puede ser negativo", Toast.LENGTH_LONG).show()
                         }
