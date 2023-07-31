@@ -13,9 +13,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.ejemplo.coinswapi.data.remote.Dto.SeccionDto
 import com.ejemplo.coinswapi.ui.Navigation.ScreenRoutes
-import com.ejemplo.coinswapi.ui.Screens.CoinsScreen
-import com.ejemplo.coinswapi.ui.Screens.RegistroCoinScreen
+import com.ejemplo.coinswapi.ui.Screens.*
+
 import com.ejemplo.coinswapi.ui.theme.CoinsWApiTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -42,13 +43,26 @@ fun SegundoParcialFrankelynApp() {
 
         NavHost(
             navController = navHostController,
-            startDestination = ScreenRoutes.ConsultaCoinsScreen.ruta
+            startDestination = ScreenRoutes.ListaEventosScreen.ruta
         ) {
-            composable(ScreenRoutes.ConsultaCoinsScreen.ruta) {
-                CoinsScreen(
+            composable(ScreenRoutes.ListaEventosScreen.ruta) {
+               EventosScreen(
                     navHostController = navHostController
                 )
             }
+
+            composable(ScreenRoutes.listaSeccionesScreen.ruta) {
+                SeccionesScreen(
+                    navHostController = navHostController
+                )
+            }
+
+            composable(ScreenRoutes.reservasScreen.ruta) {
+                ReservasScreen(
+                    navHostController = navHostController
+                )
+            }
+
 
             composable(ScreenRoutes.PostCoinScreen.ruta){
                 RegistroCoinScreen(
